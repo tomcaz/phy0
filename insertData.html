@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<!--(c) Vision Realestate-->
+<!--Insert Data HTML file-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Insert Data Into a Database</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <form method="post" action="php/insertIntoValues.php">
+      <fieldset>
+        <legend>Enter the information of the property:</legend>
+
+        <label>Property ID </label><input type="number" name="pId" /> <br />
+        <label>PropertyDescription</label><input type="text" name="PropDesp" /> <br />
+        <label>Zipcode</label><input type="varchar" name="zipcode" /> <br />
+      
+        <label>ListingPrice</label><input type="number" name="Price"/> <br />
+        <input type="submit" value="Submit" />
+      </fieldset>
+    </form>
+    <br />
+    <a href="index.html">Back to the homepage</a>
+  </body>
+</html>

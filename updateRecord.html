@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<!--(c) Vision Realestate-->
+<!--Update a Record in a Table-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Update a Record in a Table</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <p>Update the price of a property, given their property ID:</p>
+    <form method="post" action="php/updateRecord.php">
+      <label>Property ID</label> <input type="number" name="pId" /> <br />
+      <p>Change the price to:</p>
+      <label>ListingPrice</label><input type="number" name="ListingPrice" /> <br />
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
+    <a href='index.html'>Back to the Homepage</a>
+  </body>
+</html>
