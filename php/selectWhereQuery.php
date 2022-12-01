@@ -22,7 +22,8 @@
     }
 
     try {
-        $sql = "SELECT PropertyID,PropDescription,Zipcode,ListingPrice FROM Property WHERE ListingPrice < $_POST[ListingPrice]";
+        $sql = "SELECT pID,PropertyDescription,Zipcode,ListingPrice FROM Property WHERE ListingPrice <'$_POST[ListingPrice]'";
+
         $stmnt = $conn->prepare($sql);
 
         $stmnt->execute();
@@ -30,8 +31,7 @@
         $row = $stmnt->fetch();
         if ($row) {
             echo '<table>';
-            do {
-                echo "<tr><td>$row[PropertyID]</td><td>$row[PropDescription]</td><td>$row[Zipcode]</td><td>$row[ListingPrice]</td><td>";
+            echo "<tr><td>$row[pID]</td><td>$row[PropertyDescription]</td><td>$row[Zipcode]</td><td>$row[ListingPrice]</td><td>";
             } while ($row = $stmnt->fetch());
             echo '</table>';
         } else {

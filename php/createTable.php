@@ -28,11 +28,11 @@ the code in catch-block is executed. */
 	}
 
 	$sql = "CREATE TABLE Property (
-		PropertyID VARCHAR(10),
+		pID VARCHAR(10),
 		PropDesp  VARCHAR(30),
 		Zipcode VARCHAR (10),
 		ListingPrice VARCHAR(15),
-		PRIMARY KEY (PropertyID)
+		PRIMARY KEY (pID)
 	);";
 
 	try {

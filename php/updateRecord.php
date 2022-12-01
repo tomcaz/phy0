@@ -23,10 +23,10 @@
     }
 
     try {
-        $sql = "UPDATE $dbname.Property SET ListingPrice = :ListingPrice WHERE PropertyID = :PropertyID";
+        $sql = "UPDATE $dbname.Property SET ListingPrice = :sn WHERE pID = :pid";
         $stmnt = $conn->prepare($sql);         // read about prepared statement here: https://www.w3schools.com/php/php_mysql_prepared_statements.asp
-        $stmnt->bindParam(':PropertyID', $_POST['PropertyID']);
-        $stmnt->bindParam(':ListingPrice', $_POST['ListingPrice']);
+        $stmnt->bindParam(':stid', $_POST['stdId']);
+        $stmnt->bindParam(':sn', $_POST['sname']);
 
         $stmnt->execute();
         echo "<p style='color:green'>Record Updated Successfully</p>";
