@@ -23,7 +23,7 @@
     }
 
     try {
-        $sql = "SELECT pID,PropertyDescription,Zipcode,ListingPrice FROM Property WHERE Zipcode LIKE '$_POST[Zipcode]%'";
+        $sql = "SELECT PropertyID,PropDescription,Zipcode,ListingPrice FROM Property WHERE Zipcode LIKE '$_POST[Zipcode]%'";
 
         $stmnt = $conn->prepare($sql);   // read about prepared statement here: https://www.w3schools.com/php/php_mysql_prepared_statements.asp
 
@@ -32,9 +32,9 @@
         $row = $stmnt->fetch();  // fetches the first row of the table
         if ($row) {
             echo '<table>';
-            echo '<tr> <th>PropertyID</th> <th>PropertyDescription</th> <th>Zipcode</th> <th>ListingPrice</th>';
+            echo '<tr> <th>PropertyID</th> <th>PropDescription</th> <th>Zipcode</th> <th>ListingPrice</th>';
             do {
-                echo "<tr><td>$row[pID]</td><td>$row[PropertyDescription]</td><td>$row[Zipcode]</td><td>$row[ListingPrice]</td><td>";
+                echo "<tr><td>$row[PropertyID]</td><td>$row[PropDescription]</td><td>$row[Zipcode]</td><td>$row[ListingPrice]</td><td>";
             } while ($row = $stmnt->fetch());
             echo '</table>';
         } else {

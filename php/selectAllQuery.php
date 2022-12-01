@@ -23,7 +23,7 @@
     }
 
     try {
-        $sql = "SELECT  pID,PropertyDescription,Zipcode,ListingPrice FROM Property";
+        $sql = "SELECT  PropertyID,PropDescription,Zipcode,ListingPrice FROM Property";
         $stmnt = $conn->prepare($sql);    // read about prepared statement here: https://www.w3schools.com/php/php_mysql_prepared_statements.asp
 
         $stmnt->execute();
@@ -31,9 +31,9 @@
         $row = $stmnt->fetch();  // fetches the first row of the table
         if ($row) {      // if there is any result from the query
             echo '<table>';
-            echo '<tr> <th>PropertyID</th> <th>PropertyDescription</th> <th>Zipcode</th> <th>ListingPrice</th> </tr>';
+            echo '<tr> <th>PropertyID</th> <th>PropDescription</th> <th>Zipcode</th> <th>ListingPrice</th> </tr>';
             do {
-                echo "<tr><td>$row[pID]</td><td>$row[PropertyDescription]</td><td>$row[Zipcode]</td><td>$row[ListingPrice]</td></tr>";
+                echo "<tr><td>$row[PropertyID]</td><td>$row[PropDescription]</td><td>$row[Zipcode]</td><td>$row[ListingPrice]</td></tr>";
             } while ($row = $stmnt->fetch());     // fetches another row from the query result, until we reach to the end of the result
             echo '</table>';
         } else {
